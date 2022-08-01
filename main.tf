@@ -14,7 +14,6 @@ provider "google" {
   credentials = "keys.json"
 }
 
-
 resource "google_cloud_run_service" "nickname-run-tf-version" {
   
     name     = "tf-v1"
@@ -22,12 +21,10 @@ resource "google_cloud_run_service" "nickname-run-tf-version" {
     template {
       spec {
             containers {
-                image = "gcr.io/nickname-tf-run/test:try"
+                image = var.digest
             }
       }
     }
-
-
 }
 
 
@@ -43,4 +40,9 @@ data "google_iam_policy" "pub-1" {
     members = ["allUsers", ]
   }
 }
+
+
+
+
+
 
