@@ -16,7 +16,7 @@ provider "google" {
 
 
 
-esource "google_cloud_run_service" "nickname-run-tf-version" {
+resource "google_cloud_run_service" "nickname-run-tf-version" {
   
     name     = "tf-v3"
     location = "us-central1"
