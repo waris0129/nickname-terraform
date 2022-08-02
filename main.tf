@@ -14,6 +14,8 @@ provider "google" {
   credentials = "keys.json"
 }
 
+
+
 resource "google_cloud_run_service" "nickname-run-tf-version" {
   
     name     = "tf-v1"
@@ -21,10 +23,12 @@ resource "google_cloud_run_service" "nickname-run-tf-version" {
     template {
       spec {
             containers {
-                image = var.digest
+                image = "gcr.io/nickname-tf-run/java2:tf"
             }
       }
     }
+
+
 }
 
 
