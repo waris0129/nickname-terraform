@@ -17,6 +17,11 @@ provider "google" {
 
 
 resource "google_cloud_run_service" "nickname-run-tf-version" {
+
+
+    lifecycle {
+      create_before_destroy = true
+    }
   
     name     = "tf-v3"
     location = "us-central1"
@@ -27,6 +32,7 @@ resource "google_cloud_run_service" "nickname-run-tf-version" {
         }
       }
     }
+
 
 
 }
