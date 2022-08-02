@@ -16,7 +16,7 @@ provider "google" {
 
 
 
-resource "google_cloud_run_service" "nickname-run-tf-version" {
+esource "google_cloud_run_service" "nickname-run-tf-version" {
   
     name     = "tf-v3"
     location = "us-central1"
@@ -24,7 +24,7 @@ resource "google_cloud_run_service" "nickname-run-tf-version" {
       spec {
             containers {
                 image = var.image
-            }
+        }
       }
     }
 
