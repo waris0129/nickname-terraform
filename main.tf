@@ -23,7 +23,7 @@ resource "google_cloud_run_service" "nickname-run-tf-version" {
     template {
       spec {
             containers {
-                image = var.image
+                image = "gcr.io/nickname-tf-run/java2:tf"
         }
       }
     }
