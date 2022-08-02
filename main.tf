@@ -17,11 +17,6 @@ provider "google" {
 
 
 resource "google_cloud_run_service" "nickname-run-tf-version" {
-
-
-    lifecycle {
-      create_before_destroy = true
-    }
   
     name     = "tf-v3"
     location = "us-central1"
@@ -48,6 +43,15 @@ data "google_iam_policy" "pub-1" {
   binding {
     role    = "roles/run.invoker"
     members = ["allUsers", ]
+  }
+}
+
+resource "random_integer" "id" {
+  min = 20
+  max = 1000
+
+  lifecycle {
+    create_before_destroy = true
   }
 }
 
