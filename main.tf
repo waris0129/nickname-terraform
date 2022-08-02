@@ -18,12 +18,12 @@ provider "google" {
 
 resource "google_cloud_run_service" "nickname-run-tf-version" {
   
-    name     = "tf-v2"
+    name     = "tf-v3"
     location = "us-central1"
     template {
       spec {
             containers {
-                image = "gcr.io/nickname-tf-run/java2:tf"
+                image = var.image
             }
       }
     }
