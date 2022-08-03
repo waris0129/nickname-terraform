@@ -18,12 +18,12 @@ provider "google" {
 
 resource "google_cloud_run_service" "nickname-run-tf-version" {
   
-    name     = "tf-v3"
+    name     = "tf-v4"
     location = "us-central1"
     template {
       spec {
             containers {
-                image = "gcr.io/nickname-tf-run/java2:tf"
+                image = var.image
         }
       }
     }
@@ -45,16 +45,6 @@ data "google_iam_policy" "pub-1" {
     members = ["allUsers", ]
   }
 }
-
-resource "random_integer" "id" {
-  min = 20
-  max = 1000
-
-  lifecycle {
-    create_before_destroy = true
-  }
-}
-
 
 
 
