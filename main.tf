@@ -18,7 +18,7 @@ provider "google" {
 
 resource "google_cloud_run_service" "nickname-run-tf-version" {
   
-    name     = "tf-v4"
+    name     = "nickname-v1"
     location = "us-central1"
     template {
       spec {
