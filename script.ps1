@@ -1,4 +1,4 @@
-$tag = -join (((48..57)+(65..90)+(97..122)) * 80 |Get-Random -Count 12 |%{[char]$_})
+$tag = Get-Random
 
 $image = -join("gcr.io/nickname-tf-run/nickname:",$tag)
 
