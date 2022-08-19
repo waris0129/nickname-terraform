@@ -14,8 +14,6 @@ provider "google" {
   credentials = "keys.json"
 }
 
-
-
 resource "google_cloud_run_service" "nickname-run-tf-version" {
   
     name     = "nickname-tf"
@@ -27,9 +25,6 @@ resource "google_cloud_run_service" "nickname-run-tf-version" {
         }
       }
     }
-
-
-
 }
 
 
@@ -45,9 +40,3 @@ data "google_iam_policy" "pub-1" {
     members = ["allUsers", ]
   }
 }
-
-
-
-
-
-
